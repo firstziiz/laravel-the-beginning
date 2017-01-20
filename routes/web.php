@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'EventController@index');
+
+Route::get('/create', 'EventController@create');
+Route::post('/createEvent', 'EventController@createEvent');
+
+Route::get('/{eid}', 'EventController@event');
+Route::post('/{eid}/join', 'EventController@join');
